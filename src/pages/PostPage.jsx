@@ -15,6 +15,8 @@ const PostPage = () => {
   const { data = [], isLoading, error, isSuccess } = useGetBlogPostQuery(id);
   const { userInfo } = useSelector((state) => state.auth);
 
+  const random = Math.floor(Math.random() * 3) + 1;
+
   return (
     <div className="page post_page">
       {isLoading && <Loader />}
@@ -46,7 +48,14 @@ const PostPage = () => {
           </div>
           <div className="body">
             <div className="img-container">
-              <img src={`http://localhost:5000/${data.cover}`} alt="image" />
+              <img
+                src={
+                  data.cover
+                    ? `http://localhost:5000/${data.cover}`
+                    : `/assets/${random}.jpg`
+                }
+                alt=""
+              />
             </div>
             <div
               className="content"

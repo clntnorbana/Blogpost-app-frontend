@@ -10,7 +10,7 @@ const CreatePostPage = () => {
 
   const [title, setTitle] = useState("");
   const [summary, setSummary] = useState("");
-  const [file, setFile] = useState("");
+  // const [file, setFile] = useState("");
   const [content, setContent] = useState("");
 
   const createBlogPost = async (e) => {
@@ -19,7 +19,7 @@ const CreatePostPage = () => {
     const formData = new FormData();
     formData.set("title", title);
     formData.set("summary", summary);
-    formData.set("cover", file[0]);
+    // formData.set("cover", file[0]);
     formData.set("content", content);
 
     await createPost(formData).unwrap();
@@ -42,7 +42,7 @@ const CreatePostPage = () => {
         value={summary}
         onChange={(e) => setSummary(e.target.value)}
       />
-      <input type="file" onChange={(e) => setFile(e.target.files)} />
+      {/* <input type="file" onChange={(e) => setFile(e.target.files)} /> */}
       <Editor value={content} onChange={setContent} />
       <button className="btn btn_post-submit" disabled={isLoading}>
         Create post

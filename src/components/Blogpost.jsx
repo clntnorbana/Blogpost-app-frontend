@@ -6,6 +6,8 @@ const linkStyle = {
 };
 
 const Blogpost = ({ blogpost }) => {
+  const random = Math.floor(Math.random() * 3) + 1;
+
   return (
     <div className="blogpost-details">
       <Link
@@ -13,7 +15,15 @@ const Blogpost = ({ blogpost }) => {
         className="container-image"
         style={linkStyle}
       >
-        <img src={`http://localhost:5000/${blogpost.cover}`} alt="image" />
+        <img
+          className={blogpost.cover && "cover-image"}
+          src={
+            blogpost.cover
+              ? `http://localhost:5000/${blogpost.cover}`
+              : `/assets/${random}.jpg`
+          }
+          alt="image"
+        />
       </Link>
       <div className="blogpost-desc">
         <Link to={`/post/${blogpost._id}`} style={linkStyle}>

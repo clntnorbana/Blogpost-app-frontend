@@ -37,6 +37,10 @@ img {
   padding: 0 10px;
 }
 
+.cover-image {
+  border: solid 2px;
+}
+
 /* header */
 .header {
   padding: 0 10px;
