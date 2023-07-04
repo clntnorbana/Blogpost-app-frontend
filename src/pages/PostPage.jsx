@@ -48,14 +48,7 @@ const PostPage = () => {
           </div>
           <div className="body">
             <div className="img-container">
-              <img
-                src={
-                  data.cover
-                    ? `http://localhost:5000/${data.cover}`
-                    : `/assets/${random}.jpg`
-                }
-                alt=""
-              />
+              <img src={`/assets/${random}.jpg`} alt="image" />
             </div>
             <div
               className="content"
